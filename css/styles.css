@@ -1,0 +1,260 @@
+/* TABLE OF CONTENTS */
+
+/*
+1. VARIABLES
+2. RESET
+3. COMMON
+4. COMPONENTS
+5. LAYOUT
+6. UTILITIES
+7. MEDIA QUERIES
+*/
+
+/* 1. VARIABLES */
+:root {
+    /* COLORS */
+    --clr-pry-dark-cyan: hsl(185, 75%, 39%);
+    --clr-pry-vdark-desat-blue: hsl(229, 23%, 23%);
+    --clr-pry-dark-gray-blue: hsl(227, 10%, 46%);
+
+    --clr-ntl-dark-gray: hsl(0, 0%, 59%);
+    --clr-ntl-light-gray: hsl(0, 0%, 86%);
+    --clr-ntl-white: hsl(0, 0%, 100%);
+
+    /* FONT SIZES*/
+    --fs-body: 1.125rem; /* 18px: name and stats */
+    --fs-110: 0.625rem;  /* 10px: counter header */
+    --fs-300: 0.875rem;  /* 14px: location */
+
+    /* MEDIA QUERIES SIZES */
+    --mq-mobile: 375px;
+    --mq-desktop: 1440px;
+}
+
+/* 2. RESET */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+    line-height: 1.1;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+    color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+    font: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+    min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+    scroll-margin-block: 5ex;
+}
+
+/* 3. COMMON */
+body {
+    align-items: center;
+    background-attachment: fixed;
+    background-color: var(--clr-pry-dark-cyan);
+    background-image: url("../images/bg-pattern-top.svg");
+    background-position: top calc(100vh * -0.5) right calc(100vw * 0.5);
+    background-repeat: no-repeat;
+    color: var(--clr-ntl-white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* 4. COMPONENTS */
+.profile-card {
+    background-color: var(--clr-ntl-white);
+    background-image: url("../images/bg-pattern-card.svg");
+    background-repeat: no-repeat;
+    border-radius: 12px;
+    box-shadow: 0px 30px 28px 2px rgba(45, 50, 72, 0.12);
+    color: var(--clr-pry-dark-gray-blue);
+    height: 374px;
+    padding-block-start: 140px;
+    width: 326px;
+}
+
+.profile-card_user-content-box {
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    height: 100%;
+    outline: 1px solid var(--clr-ntl-dark-gray);
+    outline-offset: 0;
+}
+
+.profile-card__user-data::before {
+    background-color: #fff;
+    border-radius: 48px 48px 0 0;
+    content: "";
+    height: 52px;
+    margin-top: -53px;
+    outline: 1px solid var(--clr-ntl-dark-gray);
+    outline-offset: 0;
+    width: 106px;
+}
+
+.profile-card__user-data {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-block-end: 22px;
+}
+
+.profile-card__user-img-wrapper {
+    border: 5px solid var(--clr-ntl-white);
+    border-radius: 50%;
+    height: 106px;
+    margin-block-start: calc(52px * -1);
+    overflow: hidden;
+    width: 106px;
+    z-index: 1;
+}
+
+.profile-card__user-img {
+    aspect-ratio: 1/1;
+}
+
+.profile-card__user-data-header {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: .25rem;
+    padding-block-start: 19px;
+}
+
+.profile-card__user-name,
+.profile-card__counter-number {
+    color: var(--clr-pry-vdark-desat-blue);
+    font-size: var(--fs-body);
+    font-weight: 700;
+}
+
+.profile-card__user-location {
+    font-size: var(--fs-300);
+    margin-block-start: 5px;
+}
+
+.profile-card__counter-board {
+    align-items: center;
+    border-top: 1px solid var(--clr-ntl-light-gray);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-block-start: 24px;
+}
+
+.profile-card__counter {
+    align-items: center;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.profile-card__counter-header {
+    font-size: var(--fs-110);
+}
+
+/* 5. LAYOUT */
+.container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    width: 100vw;
+}
+
+/* Backgrounds */
+.container::after {
+    background-image: url("../images/bg-pattern-bottom.svg");
+    background-repeat: no-repeat;
+    bottom: calc(100vh * -0.5);
+    content: "";
+    height: 100vh;
+    left: calc(100vw * 0.5);
+    position: absolute;
+    width: 100vw;
+    z-index: -1;
+}
+
+/* 6. UTILITIES */
+/* GOOGLE Font */
+.kumbh-sans-dahatta {
+    font-family: "Kumbh Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "YOPQ" 300;
+}
+
+/* 7. MEDIA QUERIES */
+@media (max-width: 325px) {
+    .profile-card {
+        border-radius: 0;
+        width: 100vw;
+    }
+
+    .profile-card_user-content-box {
+        border-radius: 0;
+    }
+}
+
+@media (min-width: 1440px) {
+    .profile-card {
+        width: 350px;
+    }
+}
