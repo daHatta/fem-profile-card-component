@@ -41,27 +41,54 @@ This is my solution to the [Profile card component challenge on Frontend Mentor]
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+This low level challenge had hidden some nice tricky issues for me.
 
-To see how you can add code snippets, see below:
+One was the need to setup two background images which follow all design layouts.
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+/* ... */
+body {
+    /* ... */
+    background-attachment: fixed;
+    background-color: var(--clr-pry-dark-cyan);
+    background-image: url("../images/bg-pattern-top.svg");
+    background-position: top calc(100vh * -0.5) right calc(100vw * 0.5);
+    background-repeat: no-repeat;
+    /* ... */
 }
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
+/* ... */
+.container::after {
+    background-image: url("../images/bg-pattern-bottom.svg");
+    background-repeat: no-repeat;
+    bottom: calc(100vh * -0.5);
+    content: "";
+    height: 100vh;
+    left: calc(100vw * 0.5);
+    position: absolute;
+    width: 100vw;
+    z-index: -1;
 }
+/* ... */
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+Another twist was found on the profile-image which has a big white border with a thin gray outline which continues to the left and right of the profile-image. In order to solve this design feature 
+I used ::before to create a pseudo-element which looks like a half-circle and placed behind the profile-image.
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+```css
+/* ... */
+.profile-card__user-data::before {
+    background-color: var(--clr-ntl-white);
+    border-radius: 48px 48px 0 0;
+    content: "";
+    display: inline-block;
+    height: 52px;
+    margin-top: -53px;
+    outline: 1px solid var(--clr-ntl-dark-gray);
+    outline-offset: 0;
+    width: 106px;
+}
+/* ... */
+```
 
 ### Continued development
 

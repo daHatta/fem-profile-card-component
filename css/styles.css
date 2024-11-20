@@ -112,6 +112,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: relative;
 }
 
 /* 4. COMPONENTS */
@@ -136,9 +137,10 @@ body {
 }
 
 .profile-card__user-data::before {
-    background-color: #fff;
+    background-color: var(--clr-ntl-white);
     border-radius: 48px 48px 0 0;
     content: "";
+    display: inline-block;
     height: 52px;
     margin-top: -53px;
     outline: 1px solid var(--clr-ntl-dark-gray);
