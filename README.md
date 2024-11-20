@@ -96,10 +96,10 @@ Useful challenge to exercise CSS and HTML-Markup.
 
 ### Useful resources
 
-- [A (more) Modern CSS Reset](https://piccalil.li/blog/a-more-modern-css-reset/) - This article by Andy Bell helped me to reset websites for browser.
-- [background-image](https://developer.mozilla.org/en-US/docs/Web/CSS/background-image) - Useful resource for implementing background images on your website by *Modzilla*.
-- [Creating CSS Half Circle](https://unused-css.com/blog/css-half-circle/) - Article on Unused CSS.
-- [Google Fonts](https://fonts.google.com/specimen/Kumbh+Sans) - Font _Kumbh Sans_ used in this project.
+- [A (more) Modern CSS Reset](https://piccalil.li/blog/a-more-modern-css-reset/) - This article by **Andy Bell** helped me to reset websites for browser.
+- [background-image](https://developer.mozilla.org/en-US/docs/Web/CSS/background-image) - Useful resource for implementing background images on your website by **Modzilla**.
+- [Creating CSS Half Circle](https://unused-css.com/blog/css-half-circle/) - Article on **Unused CSS**.
+- [Google Fonts](https://fonts.google.com/specimen/Kumbh+Sans) - Font *Kumbh Sans* used in this project.
 
 ## Author
 
